@@ -1,0 +1,23 @@
+.deps/
+.venv/
+.build-venv/
+build-tools/
+release/
+__pycache__/
+diagnostics/
+research/
+app-state.json
+backups/
+build/
+dist/
+app.log
+build-packaging.log
+*.lnk
+*.log
+.env
+.env.*
+# Local hardware experiments and investigation notes are not distribution sources.
+audio_snapshot.py
+probe_*.py
+verify_*.py
+MR3_PROTOCOL.md
