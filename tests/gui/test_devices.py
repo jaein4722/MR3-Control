@@ -1,7 +1,7 @@
 """Discovery presentation tests with synthetic observations; no radio access."""
 import sys
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parent/'.deps'))
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'.deps'))
 import tkinter as tk
 from types import SimpleNamespace
 from unittest.mock import Mock

@@ -3,7 +3,8 @@ import os
 import sys
 from pathlib import Path
 
-RESOURCE_DIR = Path(__file__).resolve().parent
+RESOURCE_DIR = (Path(__file__).resolve().parent if getattr(sys, 'frozen', False)
+                else Path(__file__).resolve().parent.parent)
 
 
 def data_directory():

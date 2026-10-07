@@ -20,7 +20,7 @@ class AppTests(unittest.TestCase):
             with patch('mr3_app.CONFIG',config),patch.object(App,'setup_tray'),patch.object(App,'connect') as connect:
                 for launch in range(2):
                     root=tk.Tk()
-                    root.attributes('-alpha',0)  # Exercise lifecycle without flashing on the user's desktop.
+                    root.attributes('-alpha',0)  # Still creates a window: run only on an isolated desktop.
                     app=App(root)
                     app.overlay.factory=lambda: Mock(work_area=lambda:(0,0,1920,1040))
                     try:

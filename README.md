@@ -83,7 +83,7 @@ Use Python **3.12 x64** on Windows with Tcl/Tk included:
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe mr3_app.py
+.\.venv\Scripts\python.exe run.py
 ```
 
 After creating `.venv`, `MR3 Control.vbs` launches without a console. Source runs
@@ -112,7 +112,25 @@ GitHub Release with the installer and SHA-256 checksum. A tag that does not matc
 `VERSION` is rejected. No personal access token or signing secret is required;
 the publishing job uses the repository's built-in `GITHUB_TOKEN`.
 
-## Credits
+## Repository layout
+
+| Path | Contents |
+| --- | --- |
+| `src/` | Desktop UI, BLE control, tray, and volume overlay |
+| `tests/` | Headless tests; separate opt-in GUI tests under `tests/gui/` |
+| `tools/` | Optional diagnostics, hardware experiments, and icon generator |
+| `assets/` | Product image, icons, and bundled fonts |
+| `packaging/` | Windows build scripts and installer configuration |
+| `.github/workflows/` | CI and tagged-release automation |
+| `run.py` | Source-checkout entry point |
+
+## License and credits
+
+Original project code is licensed under the [MIT License](LICENSE).
+Pretendard remains under the **SIL Open Font License 1.1**; its copyright and
+license text are bundled with the unmodified fonts. The Edifier product photo,
+trademarks, and third-party dependencies are excluded from the MIT grant.
+See [third-party notices](THIRD_PARTY_NOTICES.md) for details.
 
 This project is not affiliated with or endorsed by Edifier. Edifier names and
 the product photograph belong to their respective owner. See

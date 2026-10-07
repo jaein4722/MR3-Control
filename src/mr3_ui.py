@@ -1,4 +1,5 @@
 """Desktop arrangement of the black, charcoal and gold ConneX control screens."""
+from mr3_paths import RESOURCE_DIR
 import tkinter as tk
 from mr3_dpi import dp
 from mr3_help import HelpPopover
@@ -118,7 +119,7 @@ def build_interface(app):
 
     picture=tk.Canvas(home,bg=BG,height=dp(254),highlightthickness=0,bd=0)
     picture.pack(fill='x',pady=dp((0,12)))
-    with Image.open(Path(__file__).resolve().parent/'assets'/'mr3-product.png') as product:
+    with Image.open(RESOURCE_DIR/'assets'/'mr3-product.png') as product:
         app.product_image=ImageTk.PhotoImage(product.resize(dp((512,512)),Image.Resampling.LANCZOS),master=root)
     picture.create_image(0,dp(127),image=app.product_image,tags='product')
     picture.bind('<Configure>',lambda e:picture.coords('product',e.width/2,e.height/2))

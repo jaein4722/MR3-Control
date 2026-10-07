@@ -52,7 +52,7 @@ and publish a new tag rather than replacing an existing installer.
 ## Headless validation
 
 ```powershell
-.\.build-venv\Scripts\python.exe -m unittest test_overlay test_packaging test_client test_pairing test_device_model test_protocol test_eq_write test_volume_write test_release
+.\.build-venv\Scripts\python.exe -m unittest discover -s tests -t .
 ```
 
 `build.ps1` also launches the frozen EXE with `--self-test REPORT_PATH` in hidden

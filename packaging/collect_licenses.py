@@ -6,6 +6,9 @@ import sys
 
 destination = Path(__file__).resolve().parent.parent / 'build/third-party'
 destination.mkdir(parents=True, exist_ok=True)
+project = Path(__file__).resolve().parent.parent
+shutil.copy2(project / 'LICENSE', destination / 'MR3-Control-LICENSE.txt')
+shutil.copy2(project / 'THIRD_PARTY_NOTICES.md', destination / 'THIRD_PARTY_NOTICES.md')
 inventory = []
 for dist in distributions():
     name = dist.metadata['Name']
@@ -28,6 +31,7 @@ if tk_license.is_file():
 (destination / 'DEPENDENCIES.txt').write_text('\n'.join(sorted(inventory)) + '\n', encoding='utf-8')
 (destination / 'NOTICE.txt').write_text(
     'MR3 Control is an unofficial application, not an Edifier product.\n'
+    'Original project code: MIT; see MR3-Control-LICENSE.txt.\n'
     'Edifier product photograph: copyright Edifier; see assets/SOURCES.md.\n'
     'Pretendard: SIL Open Font License; see assets/fonts/LICENSE.txt.\n'
     'Python, Tcl/Tk and third-party libraries retain their respective licenses.\n'

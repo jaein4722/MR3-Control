@@ -12,5 +12,5 @@ If Not fso.FileExists(python) Then
   WScript.Quit 1
 End If
 shell.CurrentDirectory = folder
-command = Chr(34) & python & Chr(34) & " " & Chr(34) & folder & "\mr3_app.py" & Chr(34)
+command = Chr(34) & python & Chr(34) & " " & Chr(34) & folder & "\run.py" & Chr(34)
 shell.Run command, 0, False

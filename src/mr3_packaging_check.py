@@ -29,7 +29,9 @@ def run(report_path):
         interp = tkinter.Tcl()
         report['tcl_version'] = interp.eval('info patchlevel')
         if report['frozen']:
-            for relative in ('_tcl_data/init.tcl', '_tk_data/tk.tcl', 'licenses/NOTICE.txt'):
+            for relative in ('_tcl_data/init.tcl', '_tk_data/tk.tcl', 'licenses/NOTICE.txt',
+                             'licenses/MR3-Control-LICENSE.txt', 'licenses/THIRD_PARTY_NOTICES.md',
+                             'assets/fonts/LICENSE.txt'):
                 assert (RESOURCE_DIR / relative).is_file(), relative
         for name in ('mr3.ico', 'mr3.png', 'mr3-product.png'):
             with Image.open(RESOURCE_DIR / 'assets' / name) as img:

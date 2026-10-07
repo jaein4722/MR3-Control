@@ -13,7 +13,6 @@ from mr3_protocol import FrameParser, SERVICE, RX, TX, interpret_state
 from mr3_pairing import ensure_ble_paired, read_paired_devices
 from mr3_paths import DATA_DIR
 
-ROOT = Path(__file__).resolve().parent
 DISCOVERY_UUIDS = {'0000f300-0000-1000-8000-00805f9b34fb',
                    '0000f600-0000-1000-8000-00805f9b34fb'}
 

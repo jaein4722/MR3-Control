@@ -11,7 +11,7 @@ winrt_root = Path(next(iter(winrt.__path__)))
 binaries = [(str(path), 'winrt') for path in winrt_root.glob('*.pyd')]
 datas = [(str(project / 'assets'), 'assets'),
          (str(project / 'build/third-party'), 'licenses')]
-a = Analysis([str(project / 'mr3_launcher.py')], pathex=[str(project)],
+a = Analysis([str(project / 'src/mr3_launcher.py')], pathex=[str(project / 'src')],
              binaries=binaries, datas=datas, hiddenimports=hidden,
              excludes=['pytest', 'unittest', 'IPython', 'matplotlib', 'numpy'])
 pyz = PYZ(a.pure)

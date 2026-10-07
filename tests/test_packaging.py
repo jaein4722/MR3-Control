@@ -27,6 +27,13 @@ class PackagingTests(unittest.TestCase):
     def test_source_startup_still_uses_vbs(self):
         with patch.object(sys, 'frozen', False, create=True):
             self.assertIn('MR3 Control.vbs', mr3_startup.startup_command())
+            self.assertIn(str(mr3_paths.RESOURCE_DIR / 'MR3 Control.vbs'), mr3_startup.startup_command())
+
+    def test_source_layout_resolves_existing_shared_resources(self):
+        for relative in ('assets/mr3-product.png', 'assets/fonts/Pretendard-Regular.ttf',
+                         'assets/fonts/LICENSE.txt', 'MR3 Control.vbs', 'run.py'):
+            with self.subTest(relative=relative):
+                self.assertTrue((mr3_paths.RESOURCE_DIR / relative).is_file())
 
 
 if __name__ == '__main__':

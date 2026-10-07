@@ -6,7 +6,7 @@
 - `fonts/Pretendard-*.ttf`: Pretendard v1.3.9, official release source
   https://github.com/orioncactus/pretendard/tree/v1.3.9/packages/pretendard/dist/public/static/alternative .
   The bundled SIL Open Font License is in `fonts/LICENSE.txt`.
-- `mr3.ico`, `mr3.png`: speaker glyph rendered by `make_icon.py`.
-- Button/navigation icons: line drawings rendered by `mr3_icons.py`.
+- `mr3.ico`, `mr3.png`: speaker glyph rendered by `tools/make_icon.py`.
+- Button/navigation icons: line drawings rendered by `src/mr3_icons.py`.
 
 Product photo and fonts are loaded locally at runtime; the app does not request network assets.

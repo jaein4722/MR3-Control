@@ -3,7 +3,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-spec = importlib.util.spec_from_file_location('prepare_version', Path(__file__).parent / 'packaging/prepare_version.py')
+spec = importlib.util.spec_from_file_location('prepare_version', Path(__file__).resolve().parent.parent / 'packaging/prepare_version.py')
 release = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(release)
 

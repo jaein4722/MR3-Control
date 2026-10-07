@@ -1,4 +1,5 @@
 """Per-user Windows login startup registration; no administrator rights needed."""
+from mr3_paths import RESOURCE_DIR
 import os
 from pathlib import Path
 import subprocess
@@ -12,7 +13,7 @@ VALUE_NAME = 'MR3 Control'
 def startup_command():
     if getattr(sys, 'frozen', False):
         return subprocess.list2cmdline([sys.executable])
-    launcher = Path(__file__).resolve().parent / 'MR3 Control.vbs'
+    launcher = RESOURCE_DIR / 'MR3 Control.vbs'
     host = Path(os.environ['SystemRoot']) / 'System32' / 'wscript.exe'
     return subprocess.list2cmdline([str(host), str(launcher)])
 

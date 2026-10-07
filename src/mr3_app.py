@@ -1,7 +1,8 @@
 """MR3 desktop controls and notification-driven volume OSD. No polling timer."""
 import sys
 from pathlib import Path
-ROOT = Path(__file__).resolve().parent
+from mr3_paths import RESOURCE_DIR
+ROOT = RESOURCE_DIR
 if not getattr(sys, 'frozen', False):
     sys.path.insert(0, str(ROOT / '.deps'))
 import asyncio

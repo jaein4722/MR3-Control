@@ -1,7 +1,7 @@
 """Input/notification separation for the new sliders and switches; no Bluetooth."""
 import sys
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parent/'.deps'))
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'.deps'))
 from types import SimpleNamespace
 import tkinter as tk
 import unittest

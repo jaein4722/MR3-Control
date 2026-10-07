@@ -1,5 +1,5 @@
 import unittest
-from mr3_eq_test import validate_eq, band_packet, eq_roundtrip
+from tools.mr3_eq_test import validate_eq, band_packet, eq_roundtrip
 
 ORIGINAL = bytes.fromhex("0c 09 00 00 00 3e 0c 01 00 7d 00 02 00 fa 03 03 01 f4 06 04 03 e8 06 05 07 d0 06 06 0f a0 06 07 1f 40 06 08 3e 80 06 56 28 6b 69") + "사운드 효과".encode()
 

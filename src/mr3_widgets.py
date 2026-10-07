@@ -1,4 +1,5 @@
 """ConneX-style Tk controls. Values change only on user input, never while drawing."""
+from mr3_paths import RESOURCE_DIR
 import tkinter as tk
 from tkinter import ttk
 from mr3_fonts import FONT
@@ -243,7 +244,7 @@ class VolumeBar(Slider):
                              fill='#edcf92' if x<=edge and active else '#494949',width=1)
         label=f'현재 볼륨: {self.values[index]}' if known else '현재 볼륨: —'
         if not hasattr(self,'value_font'):
-            self.value_font=ImageFont.truetype(str(Path(__file__).resolve().parent/'assets'/'fonts'/'Pretendard-Regular.ttf'),dp(15))
+            self.value_font=ImageFont.truetype(str(RESOURCE_DIR/'assets'/'fonts'/'Pretendard-Regular.ttf'),dp(15))
         # The label stays centred. Clip two text colours at the exact fill edge,
         # including when that edge crosses a letter, without moving the text.
         box=self.value_font.getbbox(label,anchor='lt')

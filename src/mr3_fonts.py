@@ -1,4 +1,5 @@
 """Load bundled Pretendard privately for this process, without installing fonts."""
+from mr3_paths import RESOURCE_DIR
 import atexit
 import ctypes
 from pathlib import Path
@@ -13,7 +14,7 @@ def load_fonts():
     gdi=ctypes.windll.gdi32
     gdi.AddFontResourceExW.argtypes=[ctypes.c_wchar_p,ctypes.c_uint,ctypes.c_void_p]
     gdi.RemoveFontResourceExW.argtypes=[ctypes.c_wchar_p,ctypes.c_uint,ctypes.c_void_p]
-    for path in sorted((Path(__file__).resolve().parent/'assets'/'fonts').glob('*.ttf')):
+    for path in sorted((RESOURCE_DIR/'assets'/'fonts').glob('*.ttf')):
         if not gdi.AddFontResourceExW(str(path),0x10,None):
             raise OSError('Pretendard 폰트를 불러오지 못했습니다: '+str(path))
         _loaded.append(str(path))

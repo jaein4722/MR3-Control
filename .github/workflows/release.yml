@@ -43,7 +43,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
       - name: Run headless tests (no Bluetooth or visible windows)
         run: |
-          .\.build-venv\Scripts\python.exe -m unittest test_overlay test_packaging test_client test_pairing test_device_model test_protocol test_eq_write test_volume_write test_release
+          .\.build-venv\Scripts\python.exe -m unittest discover -s tests -t .
           if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
       - name: Prepare pinned portable Inno Setup
         run: ./packaging/setup-inno.ps1
